@@ -50,6 +50,7 @@ export const Registrarse = () => {
         required
         />
       </div>
+      <button className="buton" type="submit">Registrarse</button>
     </>
   );
 };
