@@ -1,21 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { Lista, Registrarse, Home, Login } from "./components/pages";
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes/routes'
+import { ProductsProvider } from '../context/products'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Registrarse" element={<Registrarse />} />
-        <Route path="/Lista" element={<Lista />} />
-      </Routes>
-    </div>
-  );
+    <ProductsProvider>
+      <RouterProvider router={router} />
+    </ProductsProvider>
+  )
 }
 
+export default App
 
-export default App;
